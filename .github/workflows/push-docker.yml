@@ -4,12 +4,12 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: workload
     steps:
     - uses: actions/checkout@v3
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@v5
       with:
-        name: crapthings/ai-pipe-kandinsky-txt2img-v3
+        name: naivelabs/ai-pipe-kandinsky-txt2img-v3
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
