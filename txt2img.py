@@ -11,7 +11,8 @@ txt2imgPipe = AutoPipelineForText2Image.from_pretrained(
   use_safetensors = True
 )
 
-txt2imgPipe.enable_model_cpu_offload()
+txt2imgPipe.to('cuda')
+# txt2imgPipe.enable_model_cpu_offload()
 
 def txt2img (**props):
   output = txt2imgPipe(**props)
